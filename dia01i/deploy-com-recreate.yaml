@@ -5,7 +5,7 @@ metadata:
   labels:
     app: deploy-com-recreate
   name: deploy-com-recreate
-  namespace: dia-01-i
+  namespace: dia01i
 spec:
   replicas: 3
   selector:

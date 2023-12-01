@@ -7,4 +7,4 @@ kind: ConfigMap
 metadata:
   creationTimestamp: null
   name: configmap-volume
-  namespace: dia-01-i
+  namespace: dia01i

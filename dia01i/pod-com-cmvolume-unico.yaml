@@ -5,7 +5,7 @@ metadata:
   labels:
     run: pod-com-cmvolume-unico
   name: pod-com-cmvolume-unico
-  namespace: dia-01-i
+  namespace: dia01i
 spec:
   containers:
   - image: nginx

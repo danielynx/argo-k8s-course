@@ -9,4 +9,4 @@ kind: ConfigMap
 metadata:
   creationTimestamp: null
   name: configmap-desafio02
-  namespace: dia-01-i
+  namespace: dia01i

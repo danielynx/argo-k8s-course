@@ -6,4 +6,4 @@ kind: ConfigMap
 metadata:
   creationTimestamp: null
   name: configmap-segundo
-  namespace: dia-01-i
+  namespace: dia01i
