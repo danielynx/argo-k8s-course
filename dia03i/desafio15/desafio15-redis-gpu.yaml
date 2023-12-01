@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: desafio15-redis-gpu
+  name: desafio15-redis-gpu
+  namespace: dia03i
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: desafio15-redis-gpu
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: desafio15-redis-gpu
+        desafio: '15'        
+    spec:
+      containers:
+      - image: redis
+        name: redis
+        resources: {}
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: processor
+                operator: In
+                values:
+                - gpu
+status: {}

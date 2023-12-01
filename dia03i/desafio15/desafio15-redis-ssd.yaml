@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: desafio15-redis-ssd
+  name: desafio15-redis-ssd
+  namespace: dia03i
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: desafio15-redis-ssd
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: desafio15-redis-ssd
+        desafio: '15'
+    spec:
+      containers:
+      - image: redis
+        name: redis
+        resources: {}
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: disk
+                operator: In
+                values:
+                - ssd
+status: {}
