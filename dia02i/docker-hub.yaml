@@ -1,0 +1,9 @@
+apiVersion: v1
+data:
+  .dockerconfigjson: eyJhdXRocyI6eyJodHRwczovL2luZGV4LmRvY2tlci5pby92MS8iOnsidXNlcm5hbWUiOiJkYW5pZWxiYWNrZXMiLCJwYXNzd29yZCI6ImRja3JfcGF0X2IwWHBJUF96aUZ4bUZWUTBqQlBueWNCNFZrcyIsImVtYWlsIjoiZGFuaWVseW54QHByb3Rvbi5tZSIsImF1dGgiOiJaR0Z1YVdWc1ltRmphMlZ6T21SamEzSmZjR0YwWDJJd1dIQkpVRjk2YVVaNGJVWldVVEJxUWxCdWVXTkNORlpyY3c9PSJ9fX0=
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: docker-hub
+  namespace: dia02i
+type: kubernetes.io/dockerconfigjson

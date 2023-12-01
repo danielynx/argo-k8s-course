@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: deploy-startup
+  name: deploy-startup
+  namespace: dia02i
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: deploy-startup
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: deploy-startup
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
+        startupProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 10
+          periodSeconds: 5
+          timeoutSeconds: 5
+status: {}
