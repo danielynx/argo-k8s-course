@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: service-lb
+  name: service-lb
+  namespace: dia03i
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: service-lb
+  type: LoadBalancer
+status:
+  loadBalancer: {}
