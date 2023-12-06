@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: primeiro-nfs
+  name: primeiro-nfs
+  namespace: dia01a
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: primeiro-nfs
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: primeiro-nfs
+    spec:
+      volumes:
+      - name: meu-nfs
+        persistentVolumeClaim:
+          claimName: pvc-nfs
+      containers:
+      - image: nginx
+        name: nginx
+        ports:
+        - containerPort: 80
+        resources: {}
+        volumeMounts:
+        - name: meu-nfs
+          mountPath: /usr/share/nginx/html
+status: {}

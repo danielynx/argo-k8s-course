@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-depreciado
+  namespace: dia01a
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: "ingress-depreciado.local.lab"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          serviceName: ingress-depreciado
+          servicePort: 80

@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: deploy-emptydir
+  name: deploy-emptydir
+  namespace: dia01a
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: deploy-emptydir
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: deploy-emptydir
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
+        volumeMounts:
+        - name: primeiro-emptydir
+          mountPath: /app
+      - image: alpine
+        name: alpine
+        args:
+        - sleep
+        - "1800"
+        volumeMounts:
+        - name: primeiro-emptydir
+          mountPath: /app
+      volumes:
+      - name: primeiro-emptydir
+        emptyDir:
+          sizeLimit: 15Mi
