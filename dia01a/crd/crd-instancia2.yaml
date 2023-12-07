@@ -1,0 +1,8 @@
+apiVersion: "almt.io/v1"
+kind: Storage
+metadata:
+  name: storage-videos
+spec:
+  url: "storage-videos.al.mt.gov.br"
+  size: 10
+  filesystem: 'ext4'

@@ -1,0 +1,8 @@
+apiVersion: "almt.io/v1"
+kind: Curso
+metadata:
+  name: finalcurso
+spec:
+  nomeAluno: "Daniel"
+  curso: "Kubernetes"
+  nota: 10
