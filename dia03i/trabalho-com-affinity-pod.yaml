@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: trabalho-com-affinity-pod
+  name: trabalho-com-affinity-pod
+  namespace: dia03i
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: trabalho-com-affinity-pod
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: trabalho-com-affinity-pod
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
+      affinity:
+        podAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 1
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - desafio14
+              topologyKey: "kubernetes.io/hostname"   
+status: {}

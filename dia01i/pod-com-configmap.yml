@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: pod-com-configmap
+  name: pod-com-configmap
+  namespace: dia01i
+spec:
+  containers:
+  - image: nginx
+    name: pod-com-configmap
+    envFrom:
+    - configMapRef:
+        name: configmap-primeiro
+    - configMapRef:
+        name: configmap-segundo
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}

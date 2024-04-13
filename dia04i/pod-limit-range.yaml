@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: pod-limit-range
+  namespace: dia04i
+spec:
+  limits:
+  - type: Pod
+    max:
+      memory: 260Mi
+      cpu: 0.5
+    min:
+      memory: 128Mi
+      cpu: 0.1

@@ -1,0 +1,8 @@
+{
+    "auths": {
+        "https://index.docker.io/v1/": {
+            "auth": "ZGFuaWVsYmFja2VzOmRja3JfcGF0X1I0Rm5HeVhlZnpGR3dyMVdZWUJvRGdFSVl0cw==",
+            "email": "danielynx@proton.me"
+        }
+    }
+}

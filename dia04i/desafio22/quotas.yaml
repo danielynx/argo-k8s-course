@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: List
+items:
+- apiVersion: v1
+  kind: ResourceQuota
+  metadata:
+    name: production
+    namespace: desafio22
+  spec:
+    hard:
+      cpu: "1000"
+      memory: 200Gi
+    scopeSelector:
+      matchExpressions:
+      - operator : In
+        scopeName: PriorityClass
+        values: ["production"]
+- apiVersion: v1
+  kind: ResourceQuota
+  metadata:
+    name: stage
+    namespace: desafio22
+  spec:
+    hard:
+      cpu: "100"
+      memory: 20Gi
+    scopeSelector:
+      matchExpressions:
+      - operator : In
+        scopeName: PriorityClass
+        values: ["stage"]
+- apiVersion: v1
+  kind: ResourceQuota
+  metadata:
+    name: development
+    namespace: desafio22
+  spec:
+    hard:
+      cpu: "50"
+      memory: 10Gi
+    scopeSelector:
+      matchExpressions:
+      - operator : In
+        scopeName: PriorityClass
+        values: ["development"]

@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: pod-com-cmvolume-unico
+  name: pod-com-cmvolume-unico
+  namespace: dia01i
+spec:
+  containers:
+  - image: nginx
+    name: pod-com-cmvolume-unico
+    volumeMounts:
+    - name: configmap-volume
+      mountPath: /etc/config/kubernetes
+      subPath: kubernetes
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+  volumes:
+  - name: configmap-volume
+    configMap:
+      name: configmap-volume
+      items:
+      - key: kubernetes
+        path: kubernetes  
+status: {}

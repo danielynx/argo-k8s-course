@@ -1,0 +1,27 @@
+apiVersion: scheduling.k8s.io/v1
+kind: PriorityClass
+metadata:
+  name: high
+value: 1000000
+globalDefault: false
+description: "Esta PriorityClass deve ser utilizada para os Pods de alta prioridade."
+
+---
+
+apiVersion: scheduling.k8s.io/v1
+kind: PriorityClass
+metadata:
+  name: medium
+value: 500000
+globalDefault: false
+description: "Esta PriorityClass deve ser utilizada para os Pods de prioridade média."
+
+---
+
+apiVersion: scheduling.k8s.io/v1
+kind: PriorityClass
+metadata:
+  name: low
+value: 100000
+globalDefault: false
+description: "Esta PriorityClass deve ser utilizada para os Pods de baixa prioridade."

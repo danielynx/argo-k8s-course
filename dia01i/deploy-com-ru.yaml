@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: deploy-com-ru
+  name: deploy-com-ru
+  namespace: dia01i
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: deploy-com-ru
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 2
+      maxSurge: 6
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: deploy-com-ru
+    spec:
+      containers:
+      - image: nginx:1.18
+        name: nginx
+        resources: {}
+status: {}

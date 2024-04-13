@@ -1,0 +1,10 @@
+apiVersion: v1
+data:
+  kubernetes: intermediario
+  treinamento: configmap
+  teste: hello
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: configmap-volume
+  namespace: dia01i

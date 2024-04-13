@@ -1,0 +1,34 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: deploy-hostpath
+  name: deploy-hostpath
+  namespace: dia01a
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deploy-hostpath
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: deploy-hostpath
+    spec:
+      volumes:
+      - name: primeiro-hostpath
+        hostPath:
+          path: /home/vagrant/dia01a/primeiro-hostpath
+          type: DirectoryOrCreate
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
+        volumeMounts:
+        - name: primeiro-hostpath
+          mountPath: /app
+status: {}

@@ -1,0 +1,10 @@
+apiVersion: v1
+data:
+  DB-URL: WFla
+  PRODUCTION: RkFMU0U=
+  RUN-CONTAINER: VFJVRQ==
+kind: Secret
+metadata:
+  creationTimestamp: null
+  name: environment-development
+  namespace: dia02i

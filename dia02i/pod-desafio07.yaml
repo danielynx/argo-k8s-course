@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: pod-desafio07
+  name: pod-desafio07   
+  namespace: dia02i
+spec:
+  containers:
+  - image: nginx
+    name: pod-desafio07
+    volumeMounts:
+    - name: secrets
+      mountPath: "/etc/verysecret"
+    resources: {}
+  volumes:
+  - name: secrets
+    projected:
+      sources:
+      - secret:
+          name: docker-hub
+      - secret:
+          name: docker-hub-file                
+      - secret:
+          name: primeiro-secret
+      - secret:
+          name: primeiro-secret-env 
+      - secret:
+          name: primeiro-secret-file
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}

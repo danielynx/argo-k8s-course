@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: desafio15-frontend
+  name: desafio15-frontend
+  namespace: dia03i
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: desafio15-frontend
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: desafio15-frontend
+        desafio: '15'        
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: processor
+                operator: NotIn
+                values:
+                - gpu
+status: {}

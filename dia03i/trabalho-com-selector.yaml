@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: trabalho-com-selector
+  name: trabalho-com-selector
+  namespace: dia03i
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: trabalho-com-selector
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: trabalho-com-selector
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
+      nodeSelector:
+        nginx: 'true'
+status: {}

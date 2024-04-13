@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  creationTimestamp: null
+  name: primeira-quota
+  namespace: dia04i
+spec:
+  hard:
+    pods: "4"
+status: {}

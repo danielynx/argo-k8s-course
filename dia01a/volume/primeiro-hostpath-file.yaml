@@ -1,0 +1,34 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: deploy-hostpath-file
+  name: deploy-hostpath-file
+  namespace: dia01a
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deploy-hostpath-file
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: deploy-hostpath-file
+    spec:
+      volumes:
+      - name: primeiro-hostpath-file
+        hostPath:
+          path: /home/vagrant/dia01a/primeiro-hostpath/file
+          type: FileOrCreate
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
+        volumeMounts:
+        - name: primeiro-hostpath-file
+          mountPath: /app
+status: {}

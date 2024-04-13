@@ -1,0 +1,12 @@
+apiVersion: v1
+data:
+  chave1: valor1
+  chave2: valor2
+  chave3: valor3
+  chave4: valor4
+  chave5: valor5
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: configmap-desafio02
+  namespace: dia01i

@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: deafio13
+  name: deafio13
+  namespace: dia03i
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: deafio13
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: deafio13
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
+      nodeSelector:
+        nginx: 'true'
+        traefik: 'true'        
+status: {}

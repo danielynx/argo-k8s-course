@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: primeiro-nfs
+  name: primeiro-nfs-svc
+  namespace: dia01a
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: primeiro-nfs
+status:
+  loadBalancer: {}
